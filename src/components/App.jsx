@@ -8,7 +8,9 @@ class App extends React.Component {
     this.setState(state => ({
       video: this.state.videos[index]
     }));
+    searchYouTube(options, callback);
   }
+
 
 
   render() {
