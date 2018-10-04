@@ -1,14 +1,44 @@
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {videos: exampleVideoData, video: exampleVideoData[0]};
+    this.state = {videos: [], video: {}};
     this.handleClick = this.handleClick.bind(this);
+    // this.searchYouTube = searchYouTube(options, function(videos) {
+    //   this.setState({
+    //     videos: videos,
+    //     video: videos[0]
+    //   });
+    // });
   }
+
+  componentDidMount() {
+    this.searchCaller('games');
+  }
+
+
   handleClick(index) {
     this.setState(state => ({
       video: this.state.videos[index]
     }));
   }
+
+  searchCaller(query) {
+    var options = {
+      query: query,
+      max: 5,
+      key: window.YOUTUBE_API_KEY
+    };
+
+    this.props.searchYouTube(options, function(videos) {
+      this.setState({
+        videos: videos,
+        video: videos[0]
+      });
+    });
+  }
+
+
+
 
 
 
