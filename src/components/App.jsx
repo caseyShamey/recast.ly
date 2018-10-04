@@ -8,7 +8,6 @@ class App extends React.Component {
     this.setState(state => ({
       video: this.state.videos[index]
     }));
-    searchYouTube(options, callback);
   }
 
 
@@ -23,7 +22,7 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.state.video} />
+            {/* <VideoPlayer video={this.state.video} /> */}
             {/* <div><h5><em>videoPlayer</em> view goes here</h5></div> */}
           </div>
           <div className="col-md-5">
